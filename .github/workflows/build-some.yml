@@ -121,7 +121,7 @@ jobs:
           # Nothing
           #echo "# CONFIG_HAVE_KPROBES is not set" >> ./arch/${{ env.KERNEL_ARCH }}/configs/${{ env.DEFCONFIG_NAME }}
           #echo "# CONFIG_KPROBE_EVENTS is not set" >> ./arch/${{ env.KERNEL_ARCH }}/configs/${{ env.DEFCONFIG_NAME }}
-          sed -e 1739a\#ifdef CONFIG_KSU_SUSFS_SUS_MAP ./fs/proc/task_mmu.c
+          sed -e '1739a\#ifdef CONFIG_KSU_SUSFS_SUS_MAP' ./fs/proc/task_mmu.c
 
       - name: 🧰 Patch Kernel of Re:Kernel
         uses: ./.github/workflows/patch-rekernel
