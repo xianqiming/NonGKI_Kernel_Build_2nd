@@ -132,6 +132,8 @@ jobs:
         uses: ./.github/workflows/patch-hide-stuff
 
       - name: 🚀 Build Process
+        run: |
+           nl ./fs/proc/task_mmu.c | sed -e '1739a\#ifdef CONFIG_KSU_SUSFS_SUS_MAP'
         uses: ./.github/workflows/build-process
 
       - name: 🔩 Pack Process
