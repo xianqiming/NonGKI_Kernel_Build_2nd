@@ -13,7 +13,7 @@ env:
   EXTRA_CMDS : "LD=ld.lld"
 
   KERNEL_SOURCE : "https://github.com/xianqiming/android_kernel_xiaomi_gauguin"
-  KERNEL_BRANCH : "Builduse-Ksu"
+  KERNEL_BRANCH : "lineage-23.2"
 
   CLANG_SOURCE : "https://github.com/LineageOS/android_prebuilts_clang_kernel_linux-x86_clang-r416183b.git"
   CLANG_BRANCH : "lineage-20.0"
@@ -21,8 +21,8 @@ env:
   GCC_GNU : true
   GCC_64_SOURCE : "https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-gnu-9.3.git"
   GCC_64_BRANCH : "lineage-23.2"
-  GCC_32_SOURCE : ""
-  GCC_32_BRANCH : ""
+  GCC_32_SOURCE : "https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9.git"
+  GCC_32_BRANCH : "lineage-19.1"
 
   DEFCONFIG_SOURCE: ""
   DEFCONFIG_NAME : "vendor/lito-perf_defconfig vendor/xiaomi/gauguin.config"
@@ -75,13 +75,13 @@ env:
   BASEBAND_GUARD_ENABLE: "false" #if u want prevent unauthorized writes to critical partitions/device nodes.
   BASEBAND_GUARD_BOOT: "false" #if u want to protect boot partition.
 
-  HIDE_STUFF: "true" # hide some of the features
+  HIDE_STUFF: "false" # hide some of the features
 
   GENERATE_DTB: "true" # if u kernel need DTB , but cannot auto generate it. (Only Anykernel3).
   GENERATE_CHIP: "qcom" # only supported for qcom and mediatek.
 
   BUILD_DEBUGGER: "true" # Output build errors.
-  SKIP_PATCH: "true" # Ignore errors found in Patch Debugger.
+  SKIP_PATCH: "false" # Ignore errors found in Patch Debugger.
 
   BUILD_OTHER_CONFIG: "false" # Merge config files.
   MERGE_CONFIG_FILES: "vendor/debugfs.config,vendor/lahaina_QGKI.config"
